@@ -357,6 +357,7 @@ function init(counties) {
   const adviceButton = document.querySelector("#show-advice");
   const adviceScreen = document.querySelector("#screen-advice");
   const adviceStages = document.querySelector("#advice-stages");
+  const page = document.querySelector(".page");
   let selectedRow = null;
 
   function syncAdvice() {
@@ -369,6 +370,7 @@ function init(counties) {
     fieldForm.hidden = true;
     adviceScreen.hidden = true;
     climateButton.hidden = !selectedRow;
+    page.classList.add("is-home");
   }
 
   function showClimate() {
@@ -377,6 +379,7 @@ function init(counties) {
     climateScreen.hidden = false;
     fieldForm.hidden = true;
     adviceScreen.hidden = true;
+    page.classList.remove("is-home");
     renderClimate();
     climateScreen.scrollIntoView({ block: "start" });
   }
@@ -386,6 +389,7 @@ function init(counties) {
     climateScreen.hidden = true;
     fieldForm.hidden = false;
     adviceScreen.hidden = true;
+    page.classList.remove("is-home");
     syncAdvice();
     fieldForm.scrollIntoView({ block: "start" });
   }
@@ -457,6 +461,7 @@ function init(counties) {
     climateScreen.hidden = true;
     fieldForm.hidden = true;
     adviceScreen.hidden = false;
+    page.classList.remove("is-home");
     renderAdvice();
     adviceScreen.scrollIntoView({ block: "start" });
   }

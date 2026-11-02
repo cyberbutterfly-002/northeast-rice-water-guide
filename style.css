@@ -37,8 +37,12 @@ body {
   inset: 0;
   z-index: -1;
   background: url("wheat-bg.svg") center top / auto 108% no-repeat;
-  opacity: 0.5;
+  opacity: 0.2;
   pointer-events: none;
+}
+
+.page.is-home::before {
+  opacity: 0.5;
 }
 
 .mast, main {
