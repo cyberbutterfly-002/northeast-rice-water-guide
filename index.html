@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>东北水稻开沟与管水互动指南</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+  <header class="mast">
+    <h1>东北水稻开沟与管水互动指南</h1>
+    <div class="audience-switch" role="group" aria-label="身份">
+      <button type="button" data-audience="farm" aria-pressed="true">种田版</button>
+      <button type="button" data-audience="org" aria-pressed="false">项目版</button>
+    </div>
+    <p id="audience-note" class="audience-note">面向水稻种植户，语言简洁</p>
+  </header>
+
+  <main>
+    <section id="screen-place" aria-labelledby="place-title">
+      <h2 id="place-title">选择县</h2>
+      <p class="lead">先选县。选定后看当地气候，再填这块田的情况。</p>
+      <form id="place-form">
+        <div class="fields">
+          <label>
+            省
+            <select id="province" name="province">
+              <option value="" hidden selected>请选择</option>
+            </select>
+          </label>
+          <label>
+            市
+            <select id="city" name="city">
+              <option value="" hidden selected>请选择</option>
+            </select>
+          </label>
+          <label>
+            县
+            <select id="county" name="county">
+              <option value="" hidden selected>请选择</option>
+            </select>
+          </label>
+        </div>
+      </form>
+      <button type="button" id="show-climate" class="step" hidden>查看气候资料</button>
+    </section>
+
+    <section id="screen-climate" hidden aria-labelledby="climate-title">
+      <button type="button" id="back-from-climate" class="back">返回上一页</button>
+      <div id="climate" aria-live="polite">
+        <h3 id="climate-title"></h3>
+        <p id="climate-note" class="climate-note" hidden>这里只说明当地冷暖、雨水和延迟型冷害的气候信号，不改变管水建议。</p>
+        <ol id="climate-lines"></ol>
+        <p id="climate-foot" class="climate-foot" hidden></p>
+      </div>
+      <button type="button" id="show-field" class="step">补充田块信息，生成管水建议</button>
+    </section>
+
+    <form id="field-form" hidden>
+        <button type="button" id="back-from-field" class="back">返回上一页</button>
+        <fieldset class="question">
+          <legend>田块灌排水是否通畅？</legend>
+          <label class="choice"><input type="radio" name="drain" value="ok">通畅，进出水都方便</label>
+          <label class="choice"><input type="radio" name="drain" value="poor">不畅，进水或排水费劲</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>灌溉水源怎么样？</legend>
+          <label class="choice"><input type="radio" name="water" value="unstable">不稳定</label>
+          <label class="choice"><input type="radio" name="water" value="stable_or_basic">基本稳定</label>
+          <label class="choice"><input type="radio" name="water" value="sufficient">充足，可反复灌排水</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>起垄的方便程度？</legend>
+          <label class="choice"><input type="radio" name="ridge" value="easy">方便起垄</label>
+          <label class="choice"><input type="radio" name="ridge" value="hard">不方便起垄</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>田面是否平整？</legend>
+          <label class="choice"><input type="radio" name="field_even" value="even">比较平整，水能铺开</label>
+          <label class="choice"><input type="radio" name="field_even" value="uneven">高低不平</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>是否秸秆还田？</legend>
+          <label class="choice"><input type="radio" name="straw_return" value="yes">还田</label>
+          <label class="choice"><input type="radio" name="straw_return" value="no">不还田</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>预计哪天抽穗？（可以不填）</legend>
+          <div class="date-box">
+            <input id="expected-heading-date" type="date" name="expected_heading_date" aria-label="预计哪天抽穗？（可以不填）">
+            <span class="date-mask" aria-hidden="true">年/月/日</span>
+          </div>
+        </fieldset>
+        <button type="button" id="show-advice" disabled>看管水建议</button>
+      </form>
+
+    <section id="screen-advice" hidden>
+      <button type="button" id="back-from-advice" class="back">返回上一页</button>
+      <div id="advice-stages"></div>
+    </section>
+
+    <p id="load-error" class="error" hidden></p>
+  </main>
+
+  </div>
+  <script src="data/county_climate.js"></script>
+  <script src="data/cold_grades.js"></script>
+  <script src="data/heat_grades.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
