@@ -240,8 +240,6 @@ const ORG_CASES = {
   ],
 };
 
-const STRAW_CASE = "庆安试验里，淹灌加秸秆 6 t/hm² 时甲烷大约加倍；改成控制灌溉或间歇灌溉后，这一增排可以压到低于「淹灌、不还田」。还田几乎不减少灌溉定额。各期水位仍按上面的做法。本地预期用当地对照。";
-
 const PATH_TEXT = {
   furrow: {
     name: "起垄沟灌",
@@ -287,17 +285,6 @@ const PATH_TEXT = {
   },
 };
 
-const STRAW_NOTES = [
-  "收获后切碎，翻入 15 到 20 厘米，使翻压落在泡田 30 天以前。春季临近泡田才掩埋鲜秸秆时，甲烷增加，也容易漂秆、抑制分蘖。做不到秋翻时，降低还田量或改炭化、堆腐，生育期水层仍按选定的那一类。",
-  "护苗水不淹没秧心。不因为还田改成深水。",
-  "浅水完成增温和护苗，随即转入湿润或薄水。还田当年避免长期闷在深水里。北部寒地仍留薄水，不以晒田代替护苗，也不晒到开裂。",
-  "不因还田单独改这一期水位，也不改成长期深水。",
-  "茎数达到计划茎数约 80% 时晒田。生产上晒到见缝、见白根，大约 5 到 7 天。弱苗和盐碱地推迟或不晒。",
-  "冷害深水照常进行。预报连续 3 天低于 18℃ 时，临时灌到 15 到 20 厘米，水温不低于 18℃，过后退回 3 到 5 厘米。抽穗开花保持 3 到 5 厘米。高还田量时，晒田之后回到薄水。",
-  "前水不见后水：灌一次浅水，自然渗到脚窝仍有少量水再灌下一次。冷害深水结束后尽快退水。",
-  "黄熟落干。保水好的田在成熟前约 15 天、保水差的田约 7 天灌最后一次浅水，避免过早断水。",
-];
-
 function choosePath(answers) {
   const canWater = answers.water === "few" || answers.water === "repeat";
   const ridgeForFurrow = answers.ridge === "easy" || answers.ridge === "unknown";
@@ -331,11 +318,9 @@ function buildAdvice(answers, audience) {
       parts.push("水主要留在沟里，不必先把整块田找平。");
     }
     if (index === 5) parts.push(coldParagraph(answers.expected_heading_date));
-    if (answers.straw_return === "yes") parts.push(STRAW_NOTES[index]);
     return { name: STAGES[index][0], icon: STAGES[index][1], text: parts.join("") };
   });
   const notes = audience === "org" ? ORG_CASES[path].slice() : [];
-  if (answers.straw_return === "yes" && audience === "org") notes.push(STRAW_CASE);
   return {
     path,
     name: chosen.name,
