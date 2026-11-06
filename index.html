@@ -19,6 +19,9 @@
 
   <main>
     <section id="screen-home" aria-labelledby="home-title">
+      <div class="pager">
+        <button type="button" class="next" id="next-from-home">下一页</button>
+      </div>
       <h2 id="home-title">常用管水技术</h2>
       <div class="menu">
         <button type="button" data-screen="furrow">起垄沟灌简介</button>
@@ -29,7 +32,7 @@
     </section>
 
     <section id="screen-furrow" class="intro" hidden>
-      <button type="button" class="back" data-back="home">返回上一页</button>
+      <button type="button" class="back" data-back="home">上一页</button>
       <h2>起垄沟灌简介</h2>
       <article class="intro-copy" data-for="farm">
 <p>起垄沟灌用在移栽田上。移栽前把本田做成垄和沟，水稻栽在垄上。此后水留在沟里，垄面不长期建立水层。</p>
@@ -67,7 +70,7 @@
     </section>
 
     <section id="screen-awd" class="intro" hidden>
-      <button type="button" class="back" data-back="home">返回上一页</button>
+      <button type="button" class="back" data-back="home">上一页</button>
       <h2>干湿交替简介</h2>
       <article class="intro-copy" data-for="farm">
 <p>干湿交替用在平作田上。水落到该阶段的下限则灌水，升到上限停止，高出上限则排水。</p>
@@ -107,7 +110,7 @@
     </section>
 
     <section id="screen-sun" class="intro" hidden>
-      <button type="button" class="back" data-back="home">返回上一页</button>
+      <button type="button" class="back" data-back="home">上一页</button>
       <h2>晒田</h2>
       <article class="intro-copy" data-for="farm">
 <p>晒田用在分蘖末期前后。排水落干保持几天，用来减少无效分蘖，促进根系生长。晒田后灌水，再进入孕穗期。晒田通常只做一次。</p>
@@ -167,7 +170,10 @@
     </section>
 
     <section id="screen-place" hidden aria-labelledby="place-title">
-      <button type="button" class="back" data-back="home">返回上一页</button>
+      <div class="pager">
+        <button type="button" class="back" data-back="home">上一页</button>
+        <button type="button" class="next" id="next-from-place" disabled>下一页</button>
+      </div>
       <h2 id="place-title">选择县</h2>
       <p class="lead">先选省、市、县。选定县后直接填写这块田的情况。</p>
       <form id="place-form">
@@ -196,7 +202,10 @@
     </section>
 
     <form id="field-form" hidden>
-        <button type="button" id="back-from-field" class="back">返回上一页</button>
+        <div class="pager">
+          <button type="button" id="back-from-field" class="back">上一页</button>
+          <button type="button" class="next" id="next-from-field" disabled>下一页</button>
+        </div>
         <fieldset class="question">
           <legend>请勾选您了解的管水方式：</legend>
           <label class="choice"><input type="checkbox" name="aware" value="flood">持续淹水</label>
@@ -258,7 +267,10 @@
       </form>
 
     <section id="screen-advice" hidden>
-      <button type="button" id="back-from-advice" class="back">返回上一页</button>
+      <div class="pager">
+        <button type="button" id="back-from-advice" class="back">上一页</button>
+        <button type="button" class="next" id="next-from-advice" disabled>下一页</button>
+      </div>
       <div id="advice-stages"></div>
     </section>
 

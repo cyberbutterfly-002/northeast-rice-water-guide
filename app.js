@@ -365,6 +365,8 @@ function init(counties) {
   const homeScreen = document.querySelector("#screen-home");
   const placeScreen = document.querySelector("#screen-place");
   const fieldButton = document.querySelector("#show-field");
+  const nextFromPlace = document.querySelector("#next-from-place");
+  const nextFromField = document.querySelector("#next-from-field");
   const audienceNote = document.querySelector("#audience-note");
   const fieldForm = document.querySelector("#field-form");
   const adviceButton = document.querySelector("#show-advice");
@@ -378,6 +380,7 @@ function init(counties) {
       || !fieldReady(readFieldAnswers(fieldForm))
       || !groupChosen(fieldForm, "aware")
       || !groupChosen(fieldForm, "current");
+    nextFromField.disabled = adviceButton.disabled;
   }
 
   function hideFlow() {
@@ -406,6 +409,7 @@ function init(counties) {
     hideFlow();
     placeScreen.hidden = false;
     fieldButton.hidden = !selectedRow;
+    nextFromPlace.disabled = !selectedRow;
     page.classList.remove("is-home");
   }
 
@@ -536,6 +540,7 @@ function init(counties) {
   });
 
   document.querySelector("#start-guide").addEventListener("click", showPlace);
+  document.querySelector("#next-from-home").addEventListener("click", showPlace);
   document.querySelectorAll("[data-screen]").forEach((button) => {
     button.addEventListener("click", () => showIntro(button.dataset.screen));
   });
@@ -543,7 +548,9 @@ function init(counties) {
     button.addEventListener("click", showHome);
   });
   fieldButton.addEventListener("click", showFieldForm);
+  nextFromPlace.addEventListener("click", showFieldForm);
   document.querySelector("#back-from-field").addEventListener("click", showPlace);
+  nextFromField.addEventListener("click", showAdvice);
   document.querySelector("#back-from-advice").addEventListener("click", showFieldForm);
   adviceButton.addEventListener("click", showAdvice);
 

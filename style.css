@@ -68,21 +68,40 @@ h1 {
 h2 { margin: 0 0 0.4rem; font-size: 1.25rem; }
 h3 { margin: 0; font-size: 1.05rem; }
 
-.back {
-  align-self: flex-start;
-  display: inline-block;
+.pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 0 1rem;
+}
+
+.back,
+.next {
+  display: inline-block;
+  margin: 0;
   padding: 0.35rem 0.75rem;
   border: 1px solid var(--line);
   background: var(--sheet);
   color: var(--ink);
   font: inherit;
   line-height: 1.4;
-  text-align: left;
   cursor: pointer;
 }
 
-.back:focus-visible {
+.intro > .back {
+  align-self: flex-start;
+  margin: 0 0 1rem;
+}
+
+.next {
+  margin-left: auto;
+}
+  opacity: 0.45;
+  cursor: default;
+}
+
+.back:focus-visible,
+.next:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
