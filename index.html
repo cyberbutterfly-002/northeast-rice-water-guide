@@ -18,9 +18,158 @@
   </header>
 
   <main>
-    <section id="screen-place" aria-labelledby="place-title">
+    <section id="screen-home" aria-labelledby="home-title">
+      <h2 id="home-title">常用管水技术</h2>
+      <div class="menu">
+        <button type="button" data-screen="furrow">起垄沟灌简介</button>
+        <button type="button" data-screen="awd">干湿交替简介</button>
+        <button type="button" data-screen="sun">晒田</button>
+      </div>
+      <button type="button" id="start-guide" class="step">生成管水建议</button>
+    </section>
+
+    <section id="screen-furrow" class="intro" hidden>
+      <button type="button" class="back" data-back="home">返回上一页</button>
+      <h2>起垄沟灌简介</h2>
+      <article class="intro-copy" data-for="farm">
+<p>起垄沟灌用在移栽田上。移栽前把本田做成垄和沟，水稻栽在垄上。此后水留在沟里，垄面不长期建立水层。</p>
+<h3>1 各阶段水位</h3>
+<p>移栽前开好垄沟。参考尺寸为垄宽约 80 厘米、沟宽约 20 厘米、沟深约 15 厘米（《垄作灌溉和减施氮肥对稻田CH₄排放、土壤有机酸含量和酶编码基因表达量的影响》，华南农业大学学报，2024），按当地机具和行距调整。田面高低不平时，水走沟，不必先把整块田找平。</p>
+<p>移栽时用短时间浅水护苗，水深约 1 至 3 厘米（《稻田甲烷减排灌溉技术规范》，NY/T 4718—2025），也可以让沟水短时间略漫过垄面（同上华南农业大学学报，2024，插秧前沟水略高出垄面）。护苗结束后，水面回到垄面以下。返青以后到灌浆，水面宜低于垄面 5 至 10 厘米（《垄作直播控制灌溉对水稻产量和温室气体排放的影响》，中国农业科学，2023）。分蘖后期可以搁田，大约在田面下 20 至 10 厘米（NY/T 4718—2025）。收获前落干，约在收获前 5 至 10 天断水（NY/T 4718—2025；规范按沙性田提前 5 至 7 天，黏重或排水不良田提前 7 至 10 天）。</p>
+<h3>2 对产量和品质的影响</h3>
+<p>垄面不长期泡在水里，根系更容易向下扎，抽穗到成熟能积累更多干物质。已有移栽对照里，增产主要来自结实率和千粒重。沟水略低于垄面时，其他稻区的垄作实验表明会增产。东北寒地已有的垄作对照没有显著减产。水位过低时，增产效果减弱。</p>
+<p>品质上，同一类移栽对照里，糙米率、精米率和整精米率提高，垩白减少。与蒸煮黏性有关的淀粉黏滞性更好，清蛋白和谷蛋白含量提高。碾米品质的这种改善，比增产更稳定。</p>
+<p>起垄沟灌使茎秆基部节间更短、更粗，有助于减轻倒伏，也有利于后期灌浆。东北寒地垄作没有单独报告倒伏率。</p>
+<p>沟既蓄水，也排水。少雨时沟里留着底墒，再供给垄面。雨水多时，水从沟里排出。灌水和排水速度相较于不开沟更快，节省人力。</p>
+<p>大约抽穗前 20 天到抽穗后 10 天（《管水建议规则》），遇到 17℃ 上下的低温（《水稻冷害等级》，QX/T 101—2009），空壳会明显增加。此时需先把水层加深，高温或低温时深水宜在 6 厘米以上（NY/T 4718—2025）。低温过后再回到沟水低于垄面。深水只用在这一段。</p>
+</article>
+      <article class="intro-copy" data-for="org" hidden>
+<p>起垄沟灌指移栽前起垄开沟，返青后水留在沟内，栽插面不长期建立水层。东北稻区以旱育稀植、移栽为主。本方法适用于灌排通畅、水源基本稳定或充足的稻田。</p>
+<h3>1 水位与田面条件</h3>
+<p>参考规格为垄宽约 80 厘米、沟宽约 20 厘米、沟深约 15 厘米[1]，按当地机具与行距调整。移栽阶段短时浅水护苗，水深约 1 至 3 厘米[2]，或沟水短时略漫垄面[1]，护苗后水面回到垄面以下。返青至灌浆期，日常沟水低于垄面 5 至 10 厘米[3]。分蘖后期可以搁田至田面下约 20 至 10 厘米[2]。收获前断水，沙性田提前 5 至 7 天，黏重或排水不良田提前 7 至 10 天[2]。</p>
+<p>水在一般情况下均须低于垄面，水位更低时，甲烷可以进一步减少，但增产也随之减少。寒地已有垄作实验中，水面大约与垄顶齐平，季节甲烷也会明显下降，产量没有显著下降。即水面与垄面齐平时就有减排效果，略低于垄面时更易兼顾产量。</p>
+<p>田面高低不平不影响此种管水方式，相较于干湿交替（AWD）方法，此方法的灌排水速度更快、次数更少。灌排不畅或水源不稳定时，本方法不宜作为全季灌溉制度。</p>
+<h3>2 方法位置与甲烷减排</h3>
+<p>长期保持田面水层，是稻田甲烷的主要来源。起垄沟灌把厌氧环境保持在沟里，垄面持续通气，从而有效降低甲烷排放量。这一做法已有移栽前起垄、全季沟内蓄水的田间对照实验，也有寒地垄作对照实验。</p>
+<p>相对移栽后的平作持续淹水，季节甲烷明显下降。垄面不淹水时，土壤氧化还原状况改善，产甲烷过程受抑，甲烷氧化增强。窄垄且全季维持沟内蓄水时，下降更为稳定。厢面较宽时，通气土体所占比例减小，甲烷下降幅度降低。若只在整地时开沟，此后仍按常规水层灌溉，垄沟被重新淹没，减排明显变弱。</p>
+<p>返青期同时减少氮肥时，甲烷排放量还可以再降低。秸秆还田不会抵消通气对甲烷的抑制作用，但还田增加可分解有机质，幅度比不还田更不确定。实际幅度以当地对照为准。</p>
+<p>沟水略低于垄面时，减排与产量提高较易同时成立。水位明显更低时，甲烷可以进一步减少，但产量将降低。季节甲烷总量大幅下降，而抽穗阶段甲烷排放量还是全时期峰值。孕穗至抽穗时期遇低温而临时加深水层，会延长土壤厌氧环境持续时间，甲烷排放增加。</p>
+<p>直播或条播的同田比较中，起垄沟灌补水较早、垄面不重新淹没，季节甲烷可以低于落干更深的干湿交替。移栽田尚未在同一田块上同时测定这两种管水方式的甲烷排放总量。</p>
+<p>氧化亚氮随垄面通气可能上升。东北寒地已有垄作对照中，氧化亚氮未见显著差异，温室气体总量的下降主要来自甲烷。净环境效益用全球增温潜势或单位产量排放强度表述。甲烷下降的同时，上升的氧化亚氮会抵消一部分全球增温潜势的下降。</p>
+<h3>3 产量与品质</h3>
+<p>东北寒地已有垄作对照实验中，产量没有显著下降。其他非东北区域实验中，沟水略低于垄面时，常能增产。沟水明显更低时，增产优势减弱，甚至不再表现为增产，因为落干过深会抑制叶片光合作用。移栽条件下，起垄沟灌与轻度干湿交替的产量都可以高于常规浅水灌溉。二者之间的产量差异不显著。</p>
+<p>已有移栽对照里，增产主要来自结实率和千粒重。糙米率、精米率和整精米率提高，垩白下降，清蛋白、谷蛋白以及反映蒸煮黏性的淀粉黏滞性改善。碾米品质的这一方向比增产更稳定。茎秆基部节间缩短、加粗，有助于减轻倒伏、稳定后期灌浆效果，从而提高产量。</p>
+<h3>参考文献</h3>
+<p class="ref">[1] 李熠凡, 李伏生, 罗维钢, 黄挺. 垄作灌溉和减施氮肥对稻田CH₄排放、土壤有机酸含量和酶编码基因表达量的影响[J]. 华南农业大学学报, 2024, 45(1): 42-51.</p>
+<p class="ref">[2] 农业农村部. 稻田甲烷减排灌溉技术规范: NY/T 4718—2025[S]. 2025.</p>
+<p class="ref">[3] 谢军, 等. 垄作直播控制灌溉对水稻产量和温室气体排放的影响[J]. 中国农业科学, 2023. DOI: 10.3864/j.issn.0578-1752.2023.04.009.</p>
+</article>
+    </section>
+
+    <section id="screen-awd" class="intro" hidden>
+      <button type="button" class="back" data-back="home">返回上一页</button>
+      <h2>干湿交替简介</h2>
+      <article class="intro-copy" data-for="farm">
+<p>干湿交替用在平作田上。水落到该阶段的下限则灌水，升到上限停止，高出上限则排水。</p>
+<h3>1 各阶段水位</h3>
+<p>水位按水稻生长阶段掌握，单位都是相对田面的厘米数，数值来自《稻田甲烷减排灌溉技术规范》（NY/T 4718—2025）。负值表示水面在田面以下。</p>
+<p>移栽时高出田面 1 至 3 厘米。返青时在田面下 5 厘米到与田面齐平。分蘖前中期在田面下 5 厘米到田面上 3 厘米。分蘖后期搁田，在田面下 20 至 10 厘米。孕穗开花在田面下 3 厘米到田面上 3 厘米。灌浆期在田面下 10 厘米到田面上 3 厘米。收获前，沙性田提前 5 至 7 天排水。排水不畅或土质黏重的田，提前 7 至 10 天排水。</p>
+<p>落干要真正到达该阶段的下限。田面只是看起来干了、实际上水位还没有到下限，这一次通气就不完整。分蘖后期的搁田是落干最深的一段。</p>
+<h3>2 对产量和品质的影响</h3>
+<p>轻度落干时，土壤还没有干透，根系通气组织更发达，根长、根量和根系活力增加，抽穗到成熟的干物质积累更好。移栽的对照实验里，增产主要来自结实率和千粒重，产量与常规管水方式相近，或略有增加。</p>
+<p>品质上，轻度干湿交替的移栽对照里，糙米率、精米率和整精米率提高，垩白减少，淀粉的最高黏度和崩解值提高，米饭更容易表现出较好的黏性。落干过重时，这些好处随结实和粒重一起减少。</p>
+<p>基部茎秆的抗折能力在轻度落干下也可能提高，有助于减轻倒伏，从而稳定后期产量。</p>
+<p>这种管水方式需要多次到田里看水位，该灌就灌，该排就排。水源充足、灌排通畅、田面比较平整时，高低处的水位一致，才能使用此种方法。水源接不上，或者水排不出去，落干之后无法按时复水，则不宜采用。人手紧张时，可减轻落干程度，从而减少反复排灌。</p>
+<p>大约抽穗前 20 天到抽穗后 10 天（《管水建议规则》），遇到 17℃ 上下的低温（《水稻冷害等级》，QX/T 101—2009），空壳会明显增加。此时需先把水层加深，高温或低温时深水宜在 6 厘米以上（NY/T 4718—2025）。低温过后再回到该阶段的薄水上下限。</p>
+<p>秸秆还田的田，宜尽早通气，少用长期深水泡田。还田之后仍然可以按上述上下限落干和复水。</p>
+</article>
+      <article class="intro-copy" data-for="org" hidden>
+<p>干湿交替指在平作田上按水位上下限灌排。水落到该阶段下限再灌，到达上限停止灌溉，高出上限则排水。本方法依据《稻田甲烷减排灌溉技术规范》（NY/T 4718—2025），适用于水源充足、排灌方便的稻田。</p>
+<h3>1 水位与田面条件</h3>
+<p>各阶段水位相对田面，单位为厘米[1]。移栽为高出田面 1 至 3 厘米。返青为田面下 5 厘米至与田面齐平。分蘖前中期为田面下 5 厘米至田面上 3 厘米。分蘖后期搁田为田面下 20 至 10 厘米。孕穗开花为田面下 3 厘米至田面上 3 厘米。灌浆为田面下 10 厘米至田面上 3 厘米。收获前，沙性田提前 5 至 7 天排水，排水不畅或土质黏重的田提前 7 至 10 天[1]。</p>
+<p>规范要求稻田平整度符合 NY/T 499—2013[2]。田埂高度宜不低于 15 厘米[1]。田面不平整时，同一套上下限不能在全田同时成立。水源不能保证落干后复水，或田块难以排水时，本方法不宜作为优先方法。</p>
+<p>落干须到达该阶段下限。未到达下限时，预期的通气并不成立，甲烷排放下降不明显。分蘖后期是落干最深的阶段。复水后若很快又形成深水层，通气窗口随之缩短。这里采用的上下限属于轻度至中等落干。落干明显重于这些下限时，根系生长和产量都可能下降。</p>
+<h3>2 方法位置与甲烷减排</h3>
+<p>干湿交替是当前稻田水分管理里写进行业规范的一类做法。NY/T 4718—2025 把按生育阶段控制水位，作为相对长期淹水减少甲烷的灌溉制度。它的推进之处在于用整田的时间通气代替连续水层。落干时全田氧化还原电位升高，产甲烷过程受到抑制。复水后土壤重新进入厌氧环境，排放峰缩小。</p>
+<p>相对传统的持续淹水方法，季节甲烷排放量显著下降。多次落干比只晒一次更有效。落干没有到达下限时，减排效果大幅减弱。雨季或排水不畅时，效果也会明显变弱。分蘖后期搁田是落干最深的一段，也是打断连续厌氧的关键窗口。搁田后若很快灌成深水，通气时间变短，其后拔节至抽穗仍可能重新出现排放峰。寒地若水层一直留到接近收获，抽穗至灌浆仍可以是排放的主要阶段，所以水分管理要覆盖到抽穗期，才能更有效地控制甲烷排放。</p>
+<p>规范附录按阶段提出了相对农户常规灌溉的减排目标，分蘖后期在表中没有给出目标。这些目标的起草和试验背景不在东北，实际幅度以当地对照为准。秸秆还田条件下轻度干湿交替仍然可以降低甲烷，但幅度比不还田更不确定。</p>
+<p>另一种温室气体氧化亚氮排放量常随干湿交替上升，这是由于好氧与厌氧切换给硝化和反硝化作用制造了良好的条件。温室气体环境效益用全球增温潜势或单位产量排放强度表述。甲烷是水稻种植增温效应的主要部分，其排放量下降全球增温潜势下降。但上升的氧化亚氮会抵消一部分。孕穗至抽穗时期遇低温而临时加深水层，会延长厌氧时间，导致甲烷增加。</p>
+<p>直播或条播的同田对比实验中，落干更深的干湿交替，甲烷排放量高于补水更早、栽插面不建立水层的起垄沟灌。移栽田还没有同一田块上同时测定两种方法甲烷的结果。</p>
+<h3>3 产量与品质</h3>
+<p>干湿交替在通常情况下可以兼顾产量与环境效益。</p>
+<p>轻度落干下，产量多与持续淹水相当，有时略增。增产主要来自结实率和千粒重，抽穗至成熟的干物质和收获指数提高。水面低于规范下限时，水分不足会使光合受到抑制，根系变弱，可能减产。</p>
+<p>已有移栽对照实验里，轻度干湿交替与起垄沟灌的方向一致。糙米率、精米率和整精米率提高，垩白下降，清蛋白和谷蛋白增加，反映蒸煮黏性的淀粉最高黏度和崩解值提高。碾米品质的改善往往比增产更稳。这些结果来自其他稻区的实验。基部节间抗折力在轻度落干下可能提高，有助于减轻倒伏。这一变化与品种茎秆特性同时存在。</p>
+<p>移栽条件下，干湿交替与起垄沟灌的产量都可能高于通常的灌溉方式。二者之间的产量差异不显著。</p>
+<h3>参考文献</h3>
+<p class="ref">[1] 农业农村部. 稻田甲烷减排灌溉技术规范: NY/T 4718—2025[S]. 2025.</p>
+<p class="ref">[2] 农业农村部. 旋耕机作业质量: NY/T 499—2013[S]. 2013.</p>
+</article>
+    </section>
+
+    <section id="screen-sun" class="intro" hidden>
+      <button type="button" class="back" data-back="home">返回上一页</button>
+      <h2>晒田</h2>
+      <article class="intro-copy" data-for="farm">
+<p>晒田用在分蘖末期前后。排水落干保持几天，用来减少无效分蘖，促进根系生长。晒田后灌水，再进入孕穗期。晒田通常只做一次。</p>
+<h3>1 晒田时机与程度</h3>
+<p>茎数达到计划穗数大约八成，并且还在有效分蘖临界叶龄期之前，就可以排水。低洼田、叶色过深、氮肥偏多、长势过旺的田，尤其需要。秸秆还田后根系发黑、长期深灌或叶片出现褐斑时，则早一点排水。</p>
+<p>晒到地表出现鸡爪裂，或者田面见白根、叶色褪淡、叶片挺直。各地天数不完全一样，常见是大约 5 至 9 天。大约三分之一的植株已经拔节时就要停止，在幼穗分化前把水层恢复回来。时间过长，会耽误幼穗生长。</p>
+<p>旺苗可以晒得重一些。弱苗、茎数不够、漏水田和保水差的沙性田，宜晚晒、轻晒，或者不晒。盐碱地不用晒田，会把盐分带到地表。</p>
+<p>黑龙江省农业农村厅 2025 年《黑龙江省水稻中后期田间管理技术指导意见》要求：孕穗保持大约 5 厘米的稳定水层，缺水会明显增加空瘪粒；连续 3 天低于 18℃ 时，水层加深到 15 至 20 厘米，灌入水温不低于 18℃，低温过后再回到大约 3 至 5 厘米；灌浆改成间歇；保水好的田在成熟前大约 15 天、保水差的大约 7 天灌最后一次浅水。</p>
+<p>辽宁省农业农村厅 2023 年《辽宁省水稻生产技术指导意见》写明：拔节孕穗保持 5 至 8 厘米；平均气温连续低于 19℃，或夜间低于 17℃ 时，水层不低于 15 厘米，过后恢复。辽宁省农业农村厅办公室 2024 年《水稻防灾减灾及中后期田间管理技术指导意见》写明：灌浆以间歇灌溉为主，抽穗后大约 30 天内不断水。</p>
+<p>农业农村部水稻专家指导组、全国农业技术推广服务中心 2017 年《东北地区水稻中后期田间管理技术指导意见》写明：井灌稻田的水先升温，达到 17℃ 以上再灌。</p>
+<h3>2 对产量和品质的影响</h3>
+<p>晒田把后期的肥和水集中到有效茎上。落干时白根增多，根系下扎，叶色由青绿转淡，株型收拢。茎秆抗倒伏效果好。晒过的田，穗肥里宜配上钾，茎秆会更硬。</p>
+<p>相对整个生长季都不排水的田，按茎数晒一次，并且在幼穗分化前复水，产量大体可以守住，减产风险不大。东北田里产量更高的情况，需要在晒完以后继续用浅湿或轻度干湿交替方法管水。</p>
+<p>品质上，按时晒田可把肥和水集中到有效茎上，同时减轻倒伏。株间湿度下降，部分需要湿度条件的病虫害也会受到抑制。</p>
+</article>
+      <article class="intro-copy" data-for="org" hidden>
+<p>晒田指分蘖末期前后的一次排水落干。东北现行田管意见把它写进浅水层和浅湿干两套做法[1]。它按茎数和叶色决定，晒到田面裂纹和白根后回到浅水[2]。孕穗遇连续低温时加深水层[2]。晒田没有一部专讲此项的东北省级强制标准，已经写进省级田管意见和地方节水规程[2][3][4][5]。</p>
+<h3>1 晒田时机与程度</h3>
+<p>茎数达到计划茎数大约 80%，且在有效分蘖临界叶龄期之前开始排水。低洼、长势过旺、叶色过深和氮肥偏多的田要晒[2]。晒到鸡爪裂[2]，或田面见白根、叶色褪淡、叶片挺直[6]。省级意见大多不把天数写死[2]。地方规程里常见大约 5 至 7 天[4]，高寒稻区有写到大约 5 至 9 天的[5]。约三分之一植株开始拔节时停止，在幼穗分化前复水[7]。</p>
+<p>旺苗、低洼冷浆和秸秆还田后根系发黑的田，宜早晒或晒重一些[2][8]。弱苗、茎数不足、漏水田和保水差的沙性田，宜晚晒、轻晒或不晒[9]。盐碱田不用落干控蘖。落干会把盐分带到地表。黑龙江意见在有效分蘖临界期后改灌大约 10 厘米深水[2]。</p>
+<p>晒田结束后进入孕穗必须恢复水层。黑龙江地区孕穗约 5 厘米。连续 3 天低于 18℃ 时加深到 15 至 20 厘米，水温不低于 18℃，过后回到大约 3 至 5 厘米[2]。辽宁地区拔节孕穗保持 5 至 8 厘米。平均气温连续低于 19℃ 或夜间低于 17℃ 时，水层不低于 15 厘米[3]。井灌稻田的水先升温至 17℃ 以上再灌[10]。灌浆用间歇，抽穗后大约 30 天内不宜断水[11]。判断依据是茎数、叶色和裂纹[2]。</p>
+<h3>2 方法位置与甲烷减排</h3>
+<p>干湿交替从返青后按水位多次落干。起垄沟灌把水留在沟内，垄面不长期淹水。晒田通常只做一次，嵌在浅水或浅湿干之中。浅水勤灌是晒完回到薄水层。浅湿干是晒完仍多次落干，但复水只有几厘米[1]。控制灌溉在试验里除晒田和施肥、打药外不再建立水层[12]。庆安一类试验把分蘖末期晒田同时写进淹水、间歇和控制灌溉，这一次落干是这些处理共有的阶段[13][14]。</p>
+<p>国际指南把中期晒田写成东亚按生育期控蘖、壮根的排水，把干湿交替写成按水位反复复水。两者都要求发根期和抽穗开花期有水[15][16]。</p>
+<p>甲烷效应取决于对照里原来晒不晒。相对全季持续淹水、不安排分蘖末期排水的田，加一次中期排水可以使甲烷下降。晒得越重，甲烷降得越多。氧化亚氮同时上升，综合增温潜势仍然下降[17][18]。这组结果对应的是本来一直淹着的田加上这一次排水。</p>
+<p>东北田间的常规对照，多半已是浅水层加一次晒田，再加上黄熟落干[13][14][19]。浅湿干、间歇灌溉和控制灌溉比的是晒田之外还干不干。因此，国际汇总里的甲烷下降，对应的不是东北农户按意见晒一次、相对现行习惯管水再获得的同一幅度[17][18]。在已经包含这次晒田的田上，进一步的环境效益来自晒完以后少建水层。</p>
+<p>落干未真正形成裂纹和白根、或晒后很快灌成深水时，这一次通气很短，甲烷下降会变弱[18]。孕穗至抽穗遇低温而加深水层[2]，会延长土壤厌氧，这一段的甲烷增加不计入晒田的减排。秸秆还田增加可分解有机质，还田田块的幅度更不确定，宜用当地对照[14]。净环境效益用全球增温潜势或单位产量排放强度表述。甲烷下降之外，上升的氧化亚氮会抵消一部分[17]。</p>
+<h3>3 产量与品质</h3>
+<p>晒田被写入高产栽培，依据是减少无效分蘖、缩短基部节间、增加白根，使穗肥和灌浆集中在有效茎上[16][20]。相对从不落干的长期淹水，汇总结果是产量没有显著变化，减产风险低[17]。晒田轻重改变时，产量也没有随之显著变化[18]。另一项中国汇总曾报告中期晒田增产，与产量无显著变化并不一致[16]。晒田深度和复水时间尚未统一，增产还没有成为稳定结果。按茎数、在幼穗分化前结束的一次晒田，相对长期淹水，产量风险不大。晒进孕穗，或晒后接不上水，就离开了这个范围。黑龙江意见写明，孕穗缺水会明显增加空瘪粒[2]。</p>
+<p>东北试验很少把只晒一次从常规水层里单独拆出。轻干湿交替的产量可以高于浅水和重干湿交替[21]。浅湿和干湿交替也可以高于全季有水层、并已做一次晒田的对照，再往干则优势变小[19]。这些更高的产量来自全季水分制度。对照本身往往已经带一次晒田。生产上更高的产量，更多来自晒田之后的浅湿或轻度干湿交替。</p>
+<p>品质上，与产量直接相连的是籽粒充实。孕穗缺水增加空瘪粒，降低结实和外观[2]。整精米和垩白还没有被单独证明会随这一次晒田稳定变化。防倒伏是东北意见里写得最明确的目的[2]。落干抑制后期无效分蘖和基部节间伸长，根系下扎[20]。雨水多、根系没有晒过的田，后期遇风雨更容易倒[11]。晒过的田宜在穗肥中配钾[2]。南方直播田的节水栽培缩短了基部节间，抗倒性增强，纹枯病下降。地点和种植方式都是南方直播，降幅留在原试验里[22]。</p>
+<p>病虫害上，晒田降低的是株间湿度和根际还原条件[9][20]。纹枯病的高温高湿会减弱，黑根一类伤害减轻。药剂预防仍放在分蘖末期至孕穗封行前，与晒田并行[8]。稻瘟病按叶龄、破口和齐穗预防。粒肥过多会增加穗颈瘟和贪青风险[2]。螟虫和飞虱的防治意见不把晒田列为手段，施药后往往还要保持短时间浅水[2]。盐碱田走深水控蘖时，纹枯病和倒伏不能靠晒田缓解[2]。</p>
+<h3>参考文献</h3>
+<p class="ref">[1] 黑龙江省人民政府，2022. 黑龙江省「十四五」水稻生产发展规划. <a href="https://www.hlj.gov.cn/hlj/c108411/202201/c00_31183021.shtml">https://www.hlj.gov.cn/hlj/c108411/202201/c00_31183021.shtml</a></p>
+<p class="ref">[2] 黑龙江省农业农村厅，2025. 黑龙江省水稻中后期田间管理技术指导意见. <a href="https://nynct.hlj.gov.cn/nynct/c115394/202507/c00_31857118.shtml">https://nynct.hlj.gov.cn/nynct/c115394/202507/c00_31857118.shtml</a></p>
+<p class="ref">[3] 辽宁省农业农村厅，2023. 辽宁省水稻生产技术指导意见. <a href="https://nync.ln.gov.cn/nync/index/zwgk/zszdgkwj/2023031017144795907/index.shtml">https://nync.ln.gov.cn/nync/index/zwgk/zszdgkwj/2023031017144795907/index.shtml</a></p>
+<p class="ref">[4] DB2308/T 069—2020. 粳稻水资源高效利用技术规程. 佳木斯.</p>
+<p class="ref">[5] DB15/T 397—2004. 高寒地区水稻节水灌溉技术规程. 内蒙古.</p>
+<p class="ref">[6] 牡丹江市农业农村局. 水稻分蘖期田间管理注意事项. <a href="https://nyncj.mdj.gov.cn/mdjsnyncj/c100584/202606/c03_1050482.shtml">https://nyncj.mdj.gov.cn/mdjsnyncj/c100584/202606/c03_1050482.shtml</a></p>
+<p class="ref">[7] 种地网. 水稻晒田的时间和方法. <a href="http://www.zhongdi168.com/article-10103-1.html">http://www.zhongdi168.com/article-10103-1.html</a></p>
+<p class="ref">[8] 中国农业科学院. 黑龙江稻区水稻防灾减灾重点管理技术措施. <a href="https://www.caas.cn/zt/cyzj_0/zjjy-c_3/9a0c70624196490dab516d75b22a5177.htm">https://www.caas.cn/zt/cyzj_0/zjjy-c_3/9a0c70624196490dab516d75b22a5177.htm</a></p>
+<p class="ref">[9] 广东省农业农村厅. 水稻为什么要晒田、怎样晒田. <a href="https://dara.gd.gov.cn/dawenku/njzs/content/post_3955892.html">https://dara.gd.gov.cn/dawenku/njzs/content/post_3955892.html</a></p>
+<p class="ref">[10] 农业农村部水稻专家指导组、全国农业技术推广服务中心，2017. 2017 年东北地区水稻中后期田间管理技术指导意见. <a href="http://www.moa.gov.cn/gk/nszd_1/2017nszd/201707/t20170721_5757375.htm">http://www.moa.gov.cn/gk/nszd_1/2017nszd/201707/t20170721_5757375.htm</a></p>
+<p class="ref">[11] 辽宁省农业农村厅办公室，2024. 水稻防灾减灾及中后期田间管理技术指导意见. <a href="https://nync.ln.gov.cn/nync/index/zwgk/zszdgkwj/2024080714252334131/index.shtml">https://nync.ln.gov.cn/nync/index/zwgk/zszdgkwj/2024080714252334131/index.shtml</a></p>
+<p class="ref">[12] DB32/T 2950—2016. 水稻节水灌溉技术规范.</p>
+<p class="ref">[13] 王长明，等，2019. 不同灌溉模式寒地稻田 CH₄ 和 N₂O 排放特征及增温潜势分析. 灌溉排水学报.</p>
+<p class="ref">[14] Xu D, Zhang Z X, Nie T Z, 2023. Effects of straw returning and water management on yield and non-CO₂ greenhouse gas emissions in cold black soil paddies. Applied Ecology and Environmental Research, 21(5): 4099–4115. <a href="https://doi.org/10.15666/aeer/2105_40994115">https://doi.org/10.15666/aeer/2105_40994115</a></p>
+<p class="ref">[15] JIRCAS, 2024. Guidelines for improving rice yield through climate-smart water management in the Asia-monsoon region. <a href="https://www.jircas.go.jp/sites/default/files/publication/gars-e/gars-e9-_-.pdf">https://www.jircas.go.jp/sites/default/files/publication/gars-e/gars-e9-_-.pdf</a></p>
+<p class="ref">[16] Minamikawa K, 等，2019. Dissemination of water management in rice paddies in Asia. <a href="https://www.naro.go.jp/english/laboratory/niaes/files/fftc-marco_book2019_019.pdf">https://www.naro.go.jp/english/laboratory/niaes/files/fftc-marco_book2019_019.pdf</a></p>
+<p class="ref">[17] Liu X, 等，2019. Effect of mid-season drainage on CH₄ and N₂O emission and grain yield in rice ecosystem: A meta-analysis. Agricultural Water Management, 213: 1028–1035. <a href="https://doi.org/10.1016/j.agwat.2018.12.025">https://doi.org/10.1016/j.agwat.2018.12.025</a></p>
+<p class="ref">[18] A meta-analysis on the impact of mid-season drainage on rice greenhouse gas emissions and yields. Field Crops Research, 2026. <a href="https://doi.org/10.1016/j.fcr.2026.110778">https://doi.org/10.1016/j.fcr.2026.110778</a></p>
+<p class="ref">[19] 叶凡，等，2026. 不同节水灌溉方式对东北稻区水稻产量和群体质量的影响. 作物学报. <a href="https://doi.org/10.3724/sp.j.1006.2026.52029">https://doi.org/10.3724/sp.j.1006.2026.52029</a></p>
+<p class="ref">[20] 付久才，2016. 寒地水稻晾田技术. 黑龙江省农业科学院佳木斯分院. <a href="https://www.fx361.com/page/2016/1217/13044635.shtml">https://www.fx361.com/page/2016/1217/13044635.shtml</a></p>
+<p class="ref">[21] 赵黎明，李明，郑殿峰，顾春梅，那永光，解保胜，2015. 灌溉方式对寒地水稻产量及籽粒灌浆的影响. 中国农业科学, 48(22): 4493–4506. <a href="https://doi.org/10.3864/j.issn.0578-1752.2015.22.010">https://doi.org/10.3864/j.issn.0578-1752.2015.22.010</a></p>
+<p class="ref">[22] 节水高产栽培对直播稻产量、病虫害、抗倒性的影响. 中国稻米，2017. <a href="http://www.zgdm.net/EN/10.3969/j.issn.1006-8082.2017.04.033">http://www.zgdm.net/EN/10.3969/j.issn.1006-8082.2017.04.033</a></p>
+</article>
+    </section>
+
+    <section id="screen-place" hidden aria-labelledby="place-title">
+      <button type="button" class="back" data-back="home">返回上一页</button>
       <h2 id="place-title">选择县</h2>
-      <p class="lead">先选县。选定后看当地气候，再填这块田的情况。</p>
+      <p class="lead">先选省、市、县。选定县后直接填写这块田的情况。</p>
       <form id="place-form">
         <div class="fields">
           <label>
@@ -43,42 +192,55 @@
           </label>
         </div>
       </form>
-      <button type="button" id="show-climate" class="step" hidden>查看气候资料</button>
-    </section>
-
-    <section id="screen-climate" hidden aria-labelledby="climate-title">
-      <button type="button" id="back-from-climate" class="back">返回上一页</button>
-      <div id="climate" aria-live="polite">
-        <h3 id="climate-title"></h3>
-        <p id="climate-note" class="climate-note" hidden>这里只说明当地冷暖、雨水和延迟型冷害的气候信号，不改变管水建议。</p>
-        <ol id="climate-lines"></ol>
-        <p id="climate-foot" class="climate-foot" hidden></p>
-      </div>
-      <button type="button" id="show-field" class="step">补充田块信息，生成管水建议</button>
+      <button type="button" id="show-field" class="step" hidden>填写田块信息</button>
     </section>
 
     <form id="field-form" hidden>
         <button type="button" id="back-from-field" class="back">返回上一页</button>
+        <fieldset class="question">
+          <legend>请勾选您了解的管水方式：</legend>
+          <label class="choice"><input type="checkbox" name="aware" value="flood">持续淹水</label>
+          <label class="choice"><input type="checkbox" name="aware" value="sun">晒田</label>
+          <label class="choice"><input type="checkbox" name="aware" value="awd">干湿交替</label>
+          <label class="choice"><input type="checkbox" name="aware" value="shallow">浅湿干/浅湿晒/控制灌溉</label>
+          <label class="choice"><input type="checkbox" name="aware" value="furrow">起垄沟灌</label>
+          <label class="choice"><input type="checkbox" name="aware" value="none">以上都不了解</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>请勾选您正在使用的管水方式：</legend>
+          <label class="choice"><input type="checkbox" name="current" value="flood">持续淹水</label>
+          <label class="choice"><input type="checkbox" name="current" value="sun">晒田</label>
+          <label class="choice"><input type="checkbox" name="current" value="awd">干湿交替</label>
+          <label class="choice"><input type="checkbox" name="current" value="shallow">浅湿干/浅湿晒/控制灌溉</label>
+          <label class="choice"><input type="checkbox" name="current" value="furrow">起垄沟灌</label>
+          <label class="choice"><input type="checkbox" name="current" value="unknown">以上都不是/不知道</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>水稻种植面积属于以下的哪个范围？</legend>
+          <label class="choice"><input type="radio" name="area" value="small">100亩以内</label>
+          <label class="choice"><input type="radio" name="area" value="large">100亩以上</label>
+        </fieldset>
         <fieldset class="question">
           <legend>田块灌排水是否通畅？</legend>
           <label class="choice"><input type="radio" name="drain" value="ok">通畅，进出水都方便</label>
           <label class="choice"><input type="radio" name="drain" value="poor">不畅，进水或排水费劲</label>
         </fieldset>
         <fieldset class="question">
-          <legend>灌溉水源怎么样？</legend>
-          <label class="choice"><input type="radio" name="water" value="unstable">不稳定</label>
-          <label class="choice"><input type="radio" name="water" value="stable_or_basic">基本稳定</label>
-          <label class="choice"><input type="radio" name="water" value="sufficient">充足，可反复灌排水</label>
-        </fieldset>
-        <fieldset class="question">
-          <legend>起垄的方便程度？</legend>
-          <label class="choice"><input type="radio" name="ridge" value="easy">方便起垄</label>
-          <label class="choice"><input type="radio" name="ridge" value="hard">不方便起垄</label>
+          <legend>开沟的方便程度？</legend>
+          <label class="choice"><input type="radio" name="ridge" value="easy">方便开沟</label>
+          <label class="choice"><input type="radio" name="ridge" value="hard">不方便开沟</label>
+          <label class="choice"><input type="radio" name="ridge" value="unknown">不清楚</label>
         </fieldset>
         <fieldset class="question">
           <legend>田面是否平整？</legend>
           <label class="choice"><input type="radio" name="field_even" value="even">比较平整，水能铺开</label>
           <label class="choice"><input type="radio" name="field_even" value="uneven">高低不平</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend>灌溉水源及人力状况是？</legend>
+          <label class="choice"><input type="radio" name="water" value="unstable">不稳定</label>
+          <label class="choice"><input type="radio" name="water" value="few">可进行几次灌排水</label>
+          <label class="choice"><input type="radio" name="water" value="repeat">可反复灌排水</label>
         </fieldset>
         <fieldset class="question">
           <legend>是否秸秆还田？</legend>

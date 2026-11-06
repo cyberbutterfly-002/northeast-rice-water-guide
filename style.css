@@ -26,9 +26,10 @@ body {
   display: flex;
   flex-direction: column;
   width: min(24.375rem, 100%);
+  height: min(100dvh, 52.75rem);
   margin-inline: auto;
-  aspect-ratio: 390 / 844;
   padding: 0 0.85rem 1.6rem;
+  overflow: hidden;
 }
 
 .page::before {
@@ -86,7 +87,26 @@ h3 { margin: 0; font-size: 1.05rem; }
   outline-offset: 2px;
 }
 
-.lead, .climate-note {
+.intro-copy h3 {
+  margin: 1rem 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.intro-copy p {
+  margin: 0 0 0.75rem;
+}
+
+.intro-copy .ref {
+  color: var(--muted);
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.intro-copy a {
+  color: var(--green-dark);
+}
+
+.lead {
   color: var(--muted);
   margin: 0 0 1rem;
 }
@@ -95,21 +115,40 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
   padding: 1.4rem 0 0;
+  overflow: auto;
 }
 
+#screen-home,
 #screen-place,
-#screen-climate {
+.intro {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+#screen-home[hidden],
 #screen-place[hidden],
-#screen-climate[hidden],
+.intro[hidden],
 #field-form[hidden],
 #screen-advice[hidden] {
   display: none;
+}
+
+.menu {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.menu button {
+  padding: 0.7rem 0.8rem;
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--line);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .step {
@@ -208,30 +247,6 @@ select option {
   background-color: #fffdf8;
 }
 
-#climate {
-  margin-top: 0;
-  padding: 1rem 1rem 0.4rem;
-  background: var(--sheet);
-  border: 1px solid var(--line);
-}
-
-#climate-lines {
-  margin: 0;
-  padding: 0 0 0.6rem 1.2rem;
-}
-
-#climate-lines li { margin: 0 0 0.7rem; }
-
-.climate-foot {
-  margin: 0.2rem 0 0.7rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.55;
-  white-space: pre-line;
-}
-
 .stage {
   display: grid;
   grid-template-columns: 3.4rem 1fr;
@@ -260,6 +275,10 @@ select option {
 
 .advice-chosen {
   font-weight: 700;
+}
+
+.advice-climate p {
+  white-space: pre-line;
 }
 
 .advice-climate {

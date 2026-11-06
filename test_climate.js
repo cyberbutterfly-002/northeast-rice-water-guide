@@ -65,13 +65,16 @@ if (rows.some((row) => row.t59_anom_2025 !== "")) {
 
 const page = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 [
-  "先选县。选定后看当地气候，再填这块田的情况。",
+  "先选省、市、县。选定县后直接填写这块田的情况。",
   "田块灌排水是否通畅？",
   "通畅，进出水都方便",
   "不畅，进水或排水费劲",
-  "灌溉水源怎么样？",
-  "充足，可反复灌排水",
-  "起垄的方便程度？",
+  "请勾选您了解的管水方式：",
+  "开沟的方便程度？",
+  "可反复灌排水",
+  "100亩以内",
+  "生成管水建议",
+  "晒田",
   "田面是否平整？",
   "比较平整，水能铺开",
   "是否秸秆还田？",
@@ -80,15 +83,17 @@ const page = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 ].forEach((sentence) => {
   if (!page.includes(sentence)) failures.push(`页面缺少定稿句子：${sentence}`);
 });
-if (page.includes("结果用途") || page.includes("移栽") || page.includes("土壤")) {
+const form = page.slice(page.indexOf('id="field-form"'), page.indexOf('id="screen-advice"'));
+if (form.includes("结果用途") || form.includes("移栽") || form.includes("土壤")) {
   failures.push("页面写入了已删题目");
 }
 if (page.includes("水和灌排") || page.includes("起垄和田面") || page.includes("抽穗日")) {
   failures.push("页面仍有已删分类");
 }
 const ready = {
+  area: "small",
   drain: "ok",
-  water: "sufficient",
+  water: "repeat",
   ridge: "easy",
   field_even: "uneven",
   straw_return: "no",
@@ -98,18 +103,29 @@ if (fieldReady({ ...ready, water: "" })) failures.push("缺水源仍能继续");
 if (!fieldReady({ ...ready, expected_heading_date: "" })) failures.push("抽穗日留空被当成必填");
 
 const furrowAnswers = {
+  area: "small",
   drain: "ok",
-  water: "stable_or_basic",
+  water: "few",
   ridge: "easy",
   field_even: "uneven",
   straw_return: "no",
   expected_heading_date: "2026-08-01",
 };
 check("开沟", choosePath(furrowAnswers), "furrow");
-check("保苗", choosePath({ ...furrowAnswers, drain: "poor" }), "saving");
-check("干湿交替", choosePath({
+check("晒田", choosePath({ ...furrowAnswers, drain: "poor" }), "sun");
+check("小面积几次灌水", choosePath({
+  area: "small",
   drain: "ok",
-  water: "sufficient",
+  water: "few",
+  ridge: "hard",
+  field_even: "even",
+  straw_return: "no",
+  expected_heading_date: "",
+}), "sun");
+check("大面积几次灌水", choosePath({
+  area: "large",
+  drain: "ok",
+  water: "few",
   ridge: "hard",
   field_even: "even",
   straw_return: "yes",
@@ -124,6 +140,13 @@ if (buildAdvice({ ...furrowAnswers, expected_heading_date: "" }, "farm").stages[
 }
 if (!furrowAdvice.stages[0].text.includes("不必先把整块田找平")) {
   failures.push("高低不平的开沟田未写沟里留水");
+}
+if (furrowAdvice.stages.join("").includes("50.8%") || furrowAdvice.notes.length) {
+  failures.push("种田版写入了论文案例");
+}
+const orgAdvice = buildAdvice(furrowAnswers, "org");
+if (!orgAdvice.notes.some((line) => line.includes("50.8%")) || !orgAdvice.notes.some((line) => line.includes("各自引用"))) {
+  failures.push("机构版未附上垄作案例或未分开引用两种降幅");
 }
 
 if (failures.length) {
