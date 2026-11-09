@@ -65,25 +65,6 @@ h1 {
   text-wrap: balance;
 }
 
-.site-qr {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 0 0 0.9rem;
-}
-
-.site-qr img {
-  width: 5.6rem;
-  height: 5.6rem;
-  background: #fff;
-}
-
-.site-qr p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 h2 { margin: 0 0 0.4rem; font-size: 1.25rem; }
 h3 { margin: 0; font-size: 1.05rem; }
 
@@ -158,20 +139,44 @@ main {
   overflow: auto;
 }
 
+#screen-origin,
 #screen-home,
 #screen-place,
 .intro {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+#screen-origin[hidden],
 #screen-home[hidden],
 #screen-place[hidden],
 .intro[hidden],
 #field-form[hidden],
 #screen-advice[hidden] {
   display: none;
+}
+
+.home-guide {
+  margin: 0.15rem 0 0.85rem;
+}
+
+.identity-popup {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.identity-popup[hidden] {
+  display: none;
+}
+
+.identity-popup p {
+  margin: 0;
 }
 
 .menu {

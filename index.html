@@ -18,21 +18,33 @@
   </header>
 
   <main>
-    <section id="screen-home" aria-labelledby="home-title">
-      <div class="site-qr">
-        <img src="qr.svg" alt="">
-        <p>扫码打开本站</p>
-      </div>
+    <section id="screen-origin" aria-labelledby="origin-title">
       <div class="pager">
+        <button type="button" class="next" id="next-from-origin">下一页</button>
+      </div>
+      <h2 id="origin-title">产生背景</h2>
+      <p>水稻要同时适应干旱、高温和低温，并减少长期淹水带来的甲烷。改变一直建立水层的种法，按田块缩短土壤厌氧的时间，是兼顾稳产与减排的主要方向。</p>
+      <p>东北寒地与南方不同。南方稻田在持续淹水时，甲烷多集中于返青至分蘖。东北春季土温低，产甲烷较适宜的气温约为25～30℃，排放高峰并不固定：水层留到接近收获，抽穗至灌浆仍可能是主排放段；分蘖末期晒田后若再建立水层，拔节至抽穗仍会回升。孕穗至抽穗遇低温，应先加深水层护住齐穗和结实，再回到薄水或沟灌。</p>
+      <p>本指南据此写给东北移栽稻。管水不是单一做法，而是按田块在起垄沟灌、干湿交替和晒田中选择。</p>
+    </section>
+
+    <section id="screen-home" aria-labelledby="home-title" hidden>
+      <div class="pager">
+        <button type="button" class="back" id="back-from-home">上一页</button>
         <button type="button" class="next" id="next-from-home">下一页</button>
       </div>
       <h2 id="home-title">管水技术简介</h2>
+      <p class="home-guide">指南包括的东北水稻的主要管水方式有三种，这里介绍了每种技术的详细信息</p>
       <div class="menu">
         <button type="button" data-screen="furrow">起垄沟灌</button>
         <button type="button" data-screen="awd">干湿交替（AWD）</button>
         <button type="button" data-screen="sun">晒田</button>
       </div>
       <button type="button" id="start-guide" class="step">生成管水建议</button>
+      <div id="identity-popup" class="identity-popup" role="dialog" aria-modal="true" aria-labelledby="identity-popup-text">
+        <p id="identity-popup-text">选择身份：种田版内容面向直接执行的管水方案，机构版内容增加了不同管水方式的气候适应和减排潜力</p>
+        <button type="button" id="identity-confirm" class="step">确认</button>
+      </div>
     </section>
 
     <section id="screen-furrow" class="intro" hidden>
