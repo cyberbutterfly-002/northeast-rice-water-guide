@@ -65,7 +65,7 @@ if (rows.some((row) => row.t59_anom_2025 !== "")) {
 
 const page = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 [
-  "先选省、市、县。选定县后直接填写这块田的情况。",
+  "选择您所在的位置，综合田块信息生成管水建议",
   "田块灌排水是否通畅？",
   "通畅，进出水都方便",
   "不畅，进水或排水费劲",

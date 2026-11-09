@@ -46,13 +46,24 @@ body {
   opacity: 0.5;
 }
 
+.page.is-origin::before {
+  background: url("rice-home.jpg") center center / cover no-repeat;
+  opacity: 1;
+}
+
+.page.is-origin .audience-switch {
+  display: none;
+}
+
 .mast, main {
   width: auto;
 }
 
 .mast {
-  padding: 2.2rem 0 0.4rem;
+  margin-inline: -0.85rem;
+  padding: 2.2rem 0.85rem 0.4rem;
   border-bottom: 3px solid var(--green);
+  background: var(--sheet);
 }
 
 h1 {
@@ -162,13 +173,51 @@ main {
   margin: 0.15rem 0 0.85rem;
 }
 
+#screen-origin {
+  min-height: 0;
+  gap: 1rem;
+}
+
+.origin-card {
+  min-height: 0;
+  overflow: auto;
+  padding: 0.95rem 0.85rem 0.2rem;
+  background: color-mix(in srgb, var(--sheet) 80%, transparent);
+  text-align: center;
+}
+
+.origin-card p {
+  margin: 0 0 0.75rem;
+}
+
+.enter-site {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: var(--green-dark);
+  border: 1px solid var(--green-dark);
+  border-radius: 0.45rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.enter-site:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 .identity-popup {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  align-items: flex-end;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.9rem;
+  padding: 0.75rem 0.8rem 0.65rem;
+  background: var(--sheet);
 }
 
 .identity-popup[hidden] {
@@ -176,7 +225,24 @@ main {
 }
 
 .identity-popup p {
-  margin: 0;
+  align-self: stretch;
+  margin: 0 0 0.55rem;
+}
+
+#identity-confirm {
+  padding: 0.35rem 0.9rem;
+  color: #fff;
+  background: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 0.35rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#identity-confirm:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
 
 .menu {
@@ -245,12 +311,6 @@ main {
 .audience-switch button:focus-visible, select:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
-}
-
-.audience-note {
-  margin: 0 0 0.9rem;
-  color: var(--ink);
-  font-size: 0.92rem;
 }
 
 .fields {

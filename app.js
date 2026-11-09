@@ -1,10 +1,6 @@
 const PROVINCE_ORDER = ["黑龙江省", "吉林省", "辽宁省"];
 // 部署 worker 后改成实际地址，例如 https://rice-guide-stats.<账号>.workers.dev 。留空则不统计。
 const SURVEY_STATS_URL = "";
-const AUDIENCE_NOTE = {
-  farm: "面向水稻种植户，语言简洁",
-  org: "面向项目与培训，补充更多文献资料",
-};
 
 function parseCsv(text) {
   const rows = [];
@@ -349,12 +345,14 @@ function init(counties) {
   const provinceSelect = document.querySelector("#province");
   const citySelect = document.querySelector("#city");
   const countySelect = document.querySelector("#county");
+  const originScreen = document.querySelector("#screen-origin");
   const homeScreen = document.querySelector("#screen-home");
+  const identityPopup = document.querySelector("#identity-popup");
+  let identityConfirmed = false;
   const placeScreen = document.querySelector("#screen-place");
   const fieldButton = document.querySelector("#show-field");
   const nextFromPlace = document.querySelector("#next-from-place");
   const nextFromField = document.querySelector("#next-from-field");
-  const audienceNote = document.querySelector("#audience-note");
   const fieldForm = document.querySelector("#field-form");
   const adviceButton = document.querySelector("#show-advice");
   const adviceScreen = document.querySelector("#screen-advice");
@@ -371,6 +369,7 @@ function init(counties) {
   }
 
   function hideFlow() {
+    originScreen.hidden = true;
     homeScreen.hidden = true;
     document.querySelectorAll(".intro").forEach((section) => {
       section.hidden = true;
@@ -380,16 +379,28 @@ function init(counties) {
     adviceScreen.hidden = true;
   }
 
+  function setScene(scene) {
+    page.classList.toggle("is-origin", scene === "origin");
+    page.classList.toggle("is-home", scene === "home");
+  }
+
+  function showOrigin() {
+    hideFlow();
+    originScreen.hidden = false;
+    setScene("origin");
+  }
+
   function showHome() {
     hideFlow();
     homeScreen.hidden = false;
-    page.classList.add("is-home");
+    identityPopup.hidden = identityConfirmed;
+    setScene("home");
   }
 
   function showIntro(name) {
     hideFlow();
     document.querySelector(`#screen-${name}`).hidden = false;
-    page.classList.remove("is-home");
+    setScene("");
   }
 
   function showPlace() {
@@ -397,13 +408,13 @@ function init(counties) {
     placeScreen.hidden = false;
     fieldButton.hidden = !selectedRow;
     nextFromPlace.disabled = !selectedRow;
-    page.classList.remove("is-home");
+    setScene("");
   }
 
   function showFieldForm() {
     hideFlow();
     fieldForm.hidden = false;
-    page.classList.remove("is-home");
+    setScene("");
     syncAdvice();
     fieldForm.scrollIntoView({ block: "start" });
   }
@@ -481,7 +492,7 @@ function init(counties) {
     reportSurvey();
     hideFlow();
     adviceScreen.hidden = false;
-    page.classList.remove("is-home");
+    setScene("");
     renderAdvice();
     adviceScreen.scrollIntoView({ block: "start" });
   }
@@ -491,7 +502,6 @@ function init(counties) {
 
   function setAudience(audience) {
     document.body.dataset.audience = audience;
-    audienceNote.textContent = AUDIENCE_NOTE[audience];
     document.querySelectorAll("[data-audience]").forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.audience === audience));
     });
@@ -539,6 +549,12 @@ function init(counties) {
     else showPlace();
   });
 
+  document.querySelector("#enter-site").addEventListener("click", showHome);
+  document.querySelector("#back-from-home").addEventListener("click", showOrigin);
+  document.querySelector("#identity-confirm").addEventListener("click", () => {
+    identityConfirmed = true;
+    identityPopup.hidden = true;
+  });
   document.querySelector("#start-guide").addEventListener("click", showPlace);
   document.querySelector("#next-from-home").addEventListener("click", showPlace);
   document.querySelectorAll("[data-screen]").forEach((button) => {
