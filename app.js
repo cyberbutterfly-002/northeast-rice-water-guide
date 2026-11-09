@@ -1,4 +1,6 @@
 const PROVINCE_ORDER = ["黑龙江省", "吉林省", "辽宁省"];
+// 部署 worker 后改成实际地址，例如 https://rice-guide-stats.<账号>.workers.dev 。留空则不统计。
+const SURVEY_STATS_URL = "";
 const AUDIENCE_NOTE = {
   farm: "面向水稻种植户，语言简洁",
   org: "面向项目与培训，补充更多文献资料",
@@ -463,7 +465,20 @@ function init(counties) {
     adviceStages.append(footer);
   }
 
+  function reportSurvey() {
+    if (!SURVEY_STATS_URL) return;
+    const chosen = (name) => [...fieldForm.querySelectorAll(`input[name="${name}"]:checked`)].map((node) => node.value);
+    fetch(SURVEY_STATS_URL, {
+      method: "POST",
+      mode: "cors",
+      keepalive: true,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ aware: chosen("aware"), current: chosen("current") }),
+    }).catch(() => {});
+  }
+
   function showAdvice() {
+    reportSurvey();
     hideFlow();
     adviceScreen.hidden = false;
     page.classList.remove("is-home");

@@ -65,6 +65,25 @@ h1 {
   text-wrap: balance;
 }
 
+.site-qr {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.9rem;
+}
+
+.site-qr img {
+  width: 5.6rem;
+  height: 5.6rem;
+  background: #fff;
+}
+
+.site-qr p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 h2 { margin: 0 0 0.4rem; font-size: 1.25rem; }
 h3 { margin: 0; font-size: 1.05rem; }
 

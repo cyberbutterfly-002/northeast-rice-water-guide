@@ -1,0 +1,8 @@
+name = "rice-guide-stats"
+main = "survey-stats.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+GITHUB_REPO = "cyberbutterfly-002/northeast-rice-water-guide"
+STATS_BRANCH = "stats"
+STATS_PATH = "survey-stats.json"

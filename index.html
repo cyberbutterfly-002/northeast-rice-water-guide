@@ -19,13 +19,17 @@
 
   <main>
     <section id="screen-home" aria-labelledby="home-title">
+      <div class="site-qr">
+        <img src="qr.svg" alt="">
+        <p>扫码打开本站</p>
+      </div>
       <div class="pager">
         <button type="button" class="next" id="next-from-home">下一页</button>
       </div>
-      <h2 id="home-title">常用管水技术</h2>
+      <h2 id="home-title">管水技术简介</h2>
       <div class="menu">
-        <button type="button" data-screen="furrow">起垄沟灌简介</button>
-        <button type="button" data-screen="awd">干湿交替简介</button>
+        <button type="button" data-screen="furrow">起垄沟灌</button>
+        <button type="button" data-screen="awd">干湿交替（AWD）</button>
         <button type="button" data-screen="sun">晒田</button>
       </div>
       <button type="button" id="start-guide" class="step">生成管水建议</button>
@@ -33,7 +37,7 @@
 
     <section id="screen-furrow" class="intro" hidden>
       <button type="button" class="back" data-back="home">上一页</button>
-      <h2>起垄沟灌简介</h2>
+      <h2>起垄沟灌</h2>
       <article class="intro-copy" data-for="farm">
 <p>起垄沟灌用在移栽田上。移栽前把本田做成垄和沟，水稻栽在垄上。此后水留在沟里，垄面不长期建立水层。</p>
 <h3>1 各阶段水位</h3>
@@ -71,7 +75,7 @@
 
     <section id="screen-awd" class="intro" hidden>
       <button type="button" class="back" data-back="home">上一页</button>
-      <h2>干湿交替简介</h2>
+      <h2>干湿交替（AWD）</h2>
       <article class="intro-copy" data-for="farm">
 <p>干湿交替用在平作田上。水落到该阶段的下限则灌水，升到上限停止，高出上限则排水。</p>
 <h3>1 各阶段水位</h3>
@@ -175,7 +179,7 @@
         <button type="button" class="next" id="next-from-place" disabled>下一页</button>
       </div>
       <h2 id="place-title">选择县</h2>
-      <p class="lead">先选省、市、县。选定县后直接填写这块田的情况。</p>
+      <p class="lead">选择您所在的位置，综合田块信息生成管水建议</p>
       <form id="place-form">
         <div class="fields">
           <label>
