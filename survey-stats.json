@@ -1,0 +1,19 @@
+{
+  "submissions": 0,
+  "aware": {
+    "flood": 0,
+    "sun": 0,
+    "awd": 0,
+    "shallow": 0,
+    "furrow": 0,
+    "none": 0
+  },
+  "current": {
+    "flood": 0,
+    "sun": 0,
+    "awd": 0,
+    "shallow": 0,
+    "furrow": 0,
+    "unknown": 0
+  }
+}
